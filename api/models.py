@@ -154,20 +154,6 @@ class Discount(TimestampedModel):
         managed = True
         db_table = 'product_discounts'
 
-class Person(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
-
-class Passport(models.Model):
-    person = models.OneToOneField(Person, on_delete=models.CASCADE)
-    number = models.CharField(max_length=20)
-    issue_date = models.DateField()
-
-    def __str__(self):
-        return self.number
-
 # class Product(models.Model):
 #     seller = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 #     # Add other fields for your product model
